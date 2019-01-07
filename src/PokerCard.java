@@ -14,7 +14,6 @@ public class PokerCard implements Serializable {
     public final static int KING = 13;
 
     private final int suit;
-
     private final int value;
 
     public PokerCard() {
@@ -88,4 +87,8 @@ public class PokerCard implements Serializable {
         PokerCard card = (PokerCard)obj;
         return (this.suit == card.suit && this.value == card.value);
     }
+
+//    public int getWeight() {
+//        return weight;
+//    }
 }

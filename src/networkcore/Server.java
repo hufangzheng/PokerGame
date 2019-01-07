@@ -42,7 +42,7 @@ public class Server {
                 while (true) {
                     try {
                         Message msg = incomingMessages.take();
-                        messageReceived(msg.playerConnection, msg);
+                        messageReceived(msg.playerConnection, msg.message);
                     }
                     catch (Exception e) {
                         System.out.println("Read message error.");
@@ -125,7 +125,7 @@ public class Server {
 
     synchronized private void messageReceived(ConnectionToClient connection, Object message) {
         int senderID = connection.getPlayerID();
-        messageReceived(senderID, connection);
+        messageReceived(senderID, message);
     }
 
     /**
@@ -166,7 +166,6 @@ public class Server {
     private class Message {
         ConnectionToClient playerConnection;
         Object message;
-
     }
 
     /**
@@ -261,6 +260,7 @@ public class Server {
                     }
                     output.writeObject(playerID);
                     output.flush();
+                    acceptConnection(ConnectionToClient.this);
                     receiveThread = new ReceiveThread();
                     receiveThread.start();
                 }

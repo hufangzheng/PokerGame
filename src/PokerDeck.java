@@ -30,7 +30,7 @@ public class PokerDeck {
 
     public PokerCard dealCard() {
         if (cardsUsed == deck.length)
-            throw new IllegalStateException("No cards are ledt in the deck.");
+            throw new IllegalStateException("No cards are left in the deck.");
         cardsUsed++;
         return deck[cardsUsed - 1];
     }

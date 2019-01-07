@@ -164,6 +164,8 @@ abstract public class Client {
                             else
                                 playerDisconnected(msg.playerID);
                         }
+                        else
+                            messageReceived(obj);
                     }
                 }
                 catch (IOException e) {
