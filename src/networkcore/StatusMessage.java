@@ -2,7 +2,7 @@ package networkcore;
 
 import java.io.Serializable;
 
-final public class StatusMessage implements Serializable {
+final class StatusMessage implements Serializable {
 
     public final int playerID;
 

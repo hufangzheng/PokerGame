@@ -1,0 +1,4 @@
+package networkcore;
+
+class ResetSignal {
+}
